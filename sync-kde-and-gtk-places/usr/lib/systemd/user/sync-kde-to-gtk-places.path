@@ -1,0 +1,11 @@
+[Unit]
+Description=Sync from kde places to gtk bookmarks
+ConditionUser=!root
+
+[Path]
+SystemCallArchitectures=native
+PathModified=%h/.local/share/user-places.xbel
+Unit=sync-kde-to-gtk-places.service
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,11 @@
+[Unit]
+Description=Sync from kde places to gtk bookmarks
+ConditionUser=!root
+
+[Service]
+SystemCallArchitectures=native
+Type=oneshot
+ExecStart=/usr/share/sync-kde-and-gtk-places/sync-from-kde-to-gtk.sh
+
+[Install]
+WantedBy=default.target

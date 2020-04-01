@@ -1,0 +1,12 @@
+#!/bin/sh
+set -e
+package_name=sync-kde-and-gtk-places
+case "$1" in
+  install)
+
+  ln -s /usr/lib/systemd/user/sync-kde-to-gtk-places.path /etc/systemd/user/default.target.wants/sync-kde-to-gtk-places.path
+  ln -s /usr/lib/systemd/user/sync-gtk-to-kde-places.path /etc/systemd/user/default.target.wants/sync-gtk-to-kde-places.path
+
+;;
+esac
+exit 0

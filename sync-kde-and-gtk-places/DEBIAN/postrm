@@ -1,0 +1,18 @@
+#!/bin/sh
+set -e
+package_name=sync-kde-and-gtk-places
+case "$1" in
+  remove)
+  
+  rm -f /etc/systemd/user/default.target.wants/sync-kde-to-gtk-places.path
+  rm -f /etc/systemd/user/default.target.wants/sync-gtk-to-kde-places.path
+
+    ;;
+  purge)
+
+  rm -f /etc/systemd/user/default.target.wants/sync-kde-to-gtk-places.path
+  rm -f /etc/systemd/user/default.target.wants/sync-gtk-to-kde-places.path
+
+;;
+esac
+exit 0

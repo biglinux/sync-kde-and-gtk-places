@@ -1,0 +1,10 @@
+Package: sync-kde-and-gtk-places
+Version: 1.0.0-1big2
+Depends: sed, grep, diffutils
+Architecture: all
+Maintainer: Bruno Goncalves < www.biglinux.com.br >
+Section: admin
+Priority: optional
+Installed-Size:44
+Description: Sync KDE places and GTK bookmarks
+
