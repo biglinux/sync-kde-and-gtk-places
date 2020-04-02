@@ -51,14 +51,12 @@ DIFF_REMOVE=$(diff ~/.config/gtk-3.0/bookmarks-sync ~/.config/gtk-3.0/bookmarks 
 if [ "$DIFF_REMOVE" != "" ]; then
     LINK_DIFF_REMOVE="$(echo "$DIFF_REMOVE" | cut -f1 -d" ")"
     NAME_DIFF_REMOVE="$(echo "${DIFF_REMOVE#* }" | sed 's|.*/||g;s|%20| |g')"
-    
-            echo "$LINK_DIFF_REMOVE" > /home/bruno/remove.txt
+
 
     # Verify if line really removed and remove in KDE
     if [ "$(grep "^$LINK_DIFF_REMOVE \|$LINK_DIFF_REMOVE$" ~/.config/gtk-3.0/bookmarks)" = "" ]; then
         LINK_DIFF_REMOVE_LIKE_KDE="$(echo "$LINK_DIFF_REMOVE" | sed 's|%20| |g')"
         sed -i "\|<bookmark href=\"$LINK_DIFF_REMOVE_LIKE_KDE\">|,\|</bookmark>|d" ~/.local/share/user-places.xbel
-        echo "$LINK_DIFF_REMOVE_LIKE_KDE" > /home/bruno/reallyremove.txt
     fi
 
 fi
