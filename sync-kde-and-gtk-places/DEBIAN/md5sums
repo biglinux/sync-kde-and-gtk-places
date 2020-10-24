@@ -1,9 +1,9 @@
 d41d8cd98f00b204e9800998ecf8427e  DEBIAN/md5sums
-fc204e476871f0174447f0068959cf9b  DEBIAN/control
 92eb978dd2345025658b63e7167fbcdb  DEBIAN/preinst
 2c696959b8544e18c8db6282e9f2f8c3  DEBIAN/postrm
+ea048654a2b9d13316cf43a74a51f163  DEBIAN/control
 c24e761fd16efb9a767654302cfe01a3  usr/share/sync-kde-and-gtk-places/read-kde.sh
-66bafd0fbf67ea1d52da67e5ec6dba95  usr/share/sync-kde-and-gtk-places/sync-from-gtk-to-kde.sh
+71ac80a91aca9406422c38f612ebc719  usr/share/sync-kde-and-gtk-places/sync-from-gtk-to-kde.sh
 6b4339cea61288d2c73789d6e81387ac  usr/share/sync-kde-and-gtk-places/sync-from-kde-to-gtk.sh
 21fbe0219b857d979c321b5b5f19e67e  usr/lib/systemd/user/sync-gtk-to-kde-places.path
 a90c9b45f26ee165e2c1744d641c3b48  usr/lib/systemd/user/sync-gtk-to-kde-places.service
