@@ -12,8 +12,30 @@ fi
 
 OIFS=$IFS
 IFS=$'\n'
-KDE_PLACES="$(/usr/share/sync-kde-and-gtk-places/read-kde.sh)"
+KDE_PLACES="$(gawk '
+# Filter bookmark tags and </title> as record separators
+BEGIN{
+        RS = "<bookmark href=\"|[ \t]*</title>"
+}
 
+# Filter records which contain <title> tags,
+# Because <title> will appear between <bookmark href=" and </title>
+/<title>/ &&
+
+# Filter by protocol
+/file:\/|ftp:\/|smb:\// &&
+
+# Skip default folders from KDE
+!/<title>Home$|<title>Desktop$|<title>Documents$|<title>Downloads$/ &&
+
+# Substitute an existing string that matches the regex /\">.*<title>[ \t]*/ for the string "|||"
+sub("\">.*<title>[ \t]*","|||")
+
+# This awk script will print every record that satisfies the four conditions above,
+# already changed by the last sub() function
+
+' ~/.local/share/user-places.xbel)"
+## End of KDE_PLACES
 
 # Read all places from kde
 for i  in  $KDE_PLACES; do
