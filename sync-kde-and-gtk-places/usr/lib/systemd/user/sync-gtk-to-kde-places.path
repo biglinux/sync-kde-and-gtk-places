@@ -3,7 +3,6 @@ Description=Sync from gtk places to KDE bookmarks
 ConditionUser=!root
 
 [Path]
-SystemCallArchitectures=native
 PathModified=%h/.config/gtk-3.0/bookmarks
 Unit=sync-gtk-to-kde-places.service
 
