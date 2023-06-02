@@ -3,6 +3,10 @@ ln -s /usr/lib/systemd/user/sync-kde-to-gtk-places.path /etc/systemd/user/defaul
 ln -s /usr/lib/systemd/user/sync-gtk-to-kde-places.path /etc/systemd/user/default.target.wants/sync-gtk-to-kde-places.path
 }
 
+post_upgrade() {
+	post_install
+}
+
 post_remove() {
 rm -f /etc/systemd/user/default.target.wants/sync-kde-to-gtk-places.path
 rm -f /etc/systemd/user/default.target.wants/sync-gtk-to-kde-places.path
